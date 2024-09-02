@@ -22,5 +22,5 @@ public abstract class Vaisseau {
         System.out.println("Désactivation du bouclier d'un vaisseau de type " + type);
     }
 
-    abstract int emporterCargaison(int cargaison); // Poids de la cargaison
+    public abstract int emporterCargaison(int cargaison); // Poids de la cargaison
 }
