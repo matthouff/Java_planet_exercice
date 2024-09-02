@@ -1,4 +1,4 @@
-package planets;
+package conqueteEspace;
 
 public class Atmosphere {
     public float tHydrogene;

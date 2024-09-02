@@ -1,6 +1,8 @@
-import planets.Atmosphere;
-import planets.Planete;
-import planets.Vaisseau;
+import conqueteEspace.planete.Planete;
+import conqueteEspace.planete.PlaneteGazeuse;
+import conqueteEspace.planete.PlaneteTellurique;
+import conqueteEspace.vaisseau.VaisseauCivil;
+import conqueteEspace.vaisseau.VaisseauDeGuerre;
 
 public class Main {
     public static void main(String[] args) {
@@ -10,30 +12,22 @@ public class Main {
 
 
 //        ZONE PLANET
-        Planete mercure=new Planete("Mercure");
-        mercure.matiere ="Tellurique";
+        PlaneteTellurique mercure=new PlaneteTellurique("Mercure");
         mercure.diametre =4880;
-        Planete venus = new Planete("Venus");
+        PlaneteTellurique venus = new PlaneteTellurique("Venus");
         venus.diametre = 12100;
-        venus.matiere = "Tellurique";
-        Planete terre = new Planete("Terre");
+        PlaneteTellurique terre = new PlaneteTellurique("Terre");
         terre.diametre = 12756;
-        terre.matiere = "Tellurique";
-        Planete mars = new Planete("Mars");
+        PlaneteTellurique mars = new PlaneteTellurique("Mars");
         mars.diametre = 6792;
-        mars.matiere = "Tellurique";
-        Planete jupiter = new Planete("Jupiter");
+        PlaneteGazeuse jupiter = new PlaneteGazeuse("Jupiter");
         jupiter.diametre = 142984;
-        jupiter.matiere = "Gazeuse";
-        Planete saturne = new Planete("Saturne");
+        PlaneteGazeuse saturne = new PlaneteGazeuse("Saturne");
         saturne.diametre = 120536;
-        saturne.matiere = "Gazeuse";
-        Planete uranus = new Planete("Uranus");
+        PlaneteGazeuse uranus = new PlaneteGazeuse("Uranus");
         uranus.diametre = 51118;
-        uranus.matiere = "Gazeuse";
-        Planete neptune = new Planete("Neptune");
+        PlaneteGazeuse neptune = new PlaneteGazeuse("Neptune");
         neptune.diametre = 49532;
-        neptune.matiere = "Gazeuse";
 
 
 //        System.out.printf("%s a effectué %d tours complets autour de son étoile.%n", neptune.name, neptune.revolution(-3542));
@@ -87,6 +81,61 @@ public class Main {
 
 
         // AJOUT DU PREMIER CONSTRUCTEUR POUR INCRÉMENTER LE NB DE PLANÈTE CONNUE (INSTANCIÉ)
-        System.out.println(Planete.nbPlanetesDecouvertes);
+//        System.out.println(Planete.nbPlanetesDecouvertes);
+
+
+        // AJOUT DES CLASSES FILLES VaisseauDeGuerre et VaisseauCivil
+        VaisseauDeGuerre chasseur = new VaisseauDeGuerre("CHASSEUR");
+        chasseur.blindage = 156;
+        chasseur.resistanceDuBouclier = 2;
+        VaisseauCivil vaisseauMonde = new VaisseauCivil("VAISSEAU-MONDE");
+        vaisseauMonde.blindage = 4784;
+        vaisseauMonde.resistanceDuBouclier = 30;
+        VaisseauDeGuerre fregate1 = new VaisseauDeGuerre("FREGATE");
+        fregate1.blindage = 4784;
+        fregate1.resistanceDuBouclier = 30;
+        fregate1.nbPassagers = 100;
+        VaisseauDeGuerre fregate2 = new VaisseauDeGuerre("FREGATE");
+        fregate2.blindage = 4784;
+        fregate2.resistanceDuBouclier = 30;
+        fregate2.nbPassagers = 14;
+
+
+//        chasseur.activerBouclier();
+//        vaisseauMonde.activerBouclier();
+//
+//        chasseur.attaque(vaisseauMonde, "lasers photoniques", 3);
+//
+//        vaisseauMonde.desactiverBouclier();
+
+//        System.out.println("La résistance du bouclier du VM est " + vaisseauMonde.resistanceDuBouclier);
+//        System.out.println("Le blindage du VM après attaque est de " + vaisseauMonde.blindage);
+
+        // CRÉATION DES CLASSES "PlaneteTellurique", "PlaneteGazeuse" ET L'INTERFACE "Habitable"
+//        mars.accueillirVaisseau(vaisseauMonde);
+//        mars.accueillirVaisseau(chasseur);
+//        chasseur.attaque(vaisseauMonde, "Gun", 2);
+
+//        chasseur.activerBouclier();
+//        chasseur.attaque(vaisseauMonde, "Gun", 2);
+//        chasseur.desactiverBouclier();
+//        chasseur.attaque(vaisseauMonde, "Gun", 2);
+
+
+        // AJOUT DES CARGAISONS
+        terre.accueillirVaisseau(chasseur);
+        System.out.println("Cargaison refusé pour le vaisseau de type " + chasseur.type + " est " + chasseur.emporterCargaison(20) + " tonnes");
+        terre.accueillirVaisseau(fregate1);
+        System.out.println("Cargaison refusé pour le vaisseau de type " + fregate1.type + " est " + fregate1.emporterCargaison(45) + " tonnes");
+        System.out.println("Cargaison refusé pour le vaisseau de type " + fregate1.type + " est " + fregate1.emporterCargaison(12) + " tonnes");
+        terre.accueillirVaisseau(fregate2);
+        System.out.println("Cargaison refusé pour le vaisseau de type " + fregate2.type + " est " + fregate2.emporterCargaison(30) + " tonnes");
+        terre.accueillirVaisseau(vaisseauMonde);
+        System.out.println("Cargaison refusé pour le vaisseau de type " + vaisseauMonde.type + " est " + vaisseauMonde.emporterCargaison(1560) + " tonnes");
+        System.out.println("Cargaison refusé pour le vaisseau de type " + vaisseauMonde.type + " est " + vaisseauMonde.emporterCargaison(600) + " tonnes");
+
+
+
+
     }
 }
