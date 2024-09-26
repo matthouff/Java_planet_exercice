@@ -3,12 +3,12 @@ package conqueteEspace.vaisseau;
 public class VaisseauDeGuerre extends Vaisseau {
     public boolean armesDesactivees = false;
 
-    public VaisseauDeGuerre(String type) {
+    public VaisseauDeGuerre(TypeVaisseau type) {
         super(type);
         switch (type){
-            case "CHASSEUR" -> tonnageMax = 0;
-            case "FREGATE" -> tonnageMax = 50;
-            case "CROISEUR" -> tonnageMax = 100;
+            case CHASSEUR -> tonnageMax = 0;
+            case FREGATE -> tonnageMax = 50;
+            case CROISEUR -> tonnageMax = 100;
         }
     }
 

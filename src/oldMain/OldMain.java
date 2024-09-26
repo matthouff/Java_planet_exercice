@@ -2,6 +2,7 @@ package oldMain;
 
 import conqueteEspace.planete.PlaneteGazeuse;
 import conqueteEspace.planete.PlaneteTellurique;
+import conqueteEspace.vaisseau.TypeVaisseau;
 import conqueteEspace.vaisseau.VaisseauCivil;
 import conqueteEspace.vaisseau.VaisseauDeGuerre;
 
@@ -86,17 +87,17 @@ public class OldMain {
 
 
         // AJOUT DES CLASSES FILLES VaisseauDeGuerre et VaisseauCivil
-        VaisseauDeGuerre chasseur = new VaisseauDeGuerre("CHASSEUR");
+        VaisseauDeGuerre chasseur = new VaisseauDeGuerre(TypeVaisseau.CHASSEUR);
         chasseur.blindage = 156;
         chasseur.resistanceDuBouclier = 2;
-        VaisseauCivil vaisseauMonde = new VaisseauCivil("VAISSEAU-MONDE");
+        VaisseauCivil vaisseauMonde = new VaisseauCivil(TypeVaisseau.VAISSEAUMONDE);
         vaisseauMonde.blindage = 4784;
         vaisseauMonde.resistanceDuBouclier = 30;
-        VaisseauDeGuerre fregate1 = new VaisseauDeGuerre("FREGATE");
+        VaisseauDeGuerre fregate1 = new VaisseauDeGuerre(TypeVaisseau.FREGATE);
         fregate1.blindage = 4784;
         fregate1.resistanceDuBouclier = 30;
         fregate1.nbPassagers = 100;
-        VaisseauDeGuerre fregate2 = new VaisseauDeGuerre("FREGATE");
+        VaisseauDeGuerre fregate2 = new VaisseauDeGuerre(TypeVaisseau.FREGATE);
         fregate2.blindage = 4784;
         fregate2.resistanceDuBouclier = 30;
         fregate2.nbPassagers = 14;

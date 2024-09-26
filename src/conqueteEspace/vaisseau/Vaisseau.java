@@ -1,7 +1,7 @@
 package conqueteEspace.vaisseau;
 
 public abstract class Vaisseau {
-    public String type;
+    public TypeVaisseau type;
     public int nbPassagers;
     public int blindage;
     public int resistanceDuBouclier;
@@ -9,7 +9,7 @@ public abstract class Vaisseau {
     public int tonnageActuel;
 
 
-    Vaisseau(String type) {
+    Vaisseau(TypeVaisseau type) {
         this.type = type;
     }
 
